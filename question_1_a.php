@@ -1,23 +1,28 @@
-<!-- The isset() function. -->
+<!-- isset() function. -->
 
 <?php
 $data = "clusters";
 if(isset($data)){
-    echo "The variable \$data is set and not NULL.";
-    // The output will be shown because isset returns true as the $data variable is set 
-    // to a certain value and is not null.
+    echo "The variable \$data is set and not NULL. \n";
+}
+else{
+    echo "The variable \$data is not set and/or not NULL. \n";
 }
 
 $name;
 if(isset($name)){
-    echo "The variable \$name is not set";
-    // The output won't be shown because isset returns false as $name varable doesn't hold any value
+    echo "The variable \$name is set and not NULL \n";
+}
+else{
+    echo "The variable \$name is not set and/or NULL. \n";
 }
 
 $email = null;
 if(isset($email)){
-    echo "The variable \$email is set to null.";
-    // This output won't be shown because isset returns false as $email variable is set to null.
+    echo "The variable \$email is set and not null. \n";
+}
+else{
+    echo "The variable \$email is set and NULL. \n";
 }
 ?>
 
