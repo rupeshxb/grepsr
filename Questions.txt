@@ -1,0 +1,115 @@
+1. Write a code, using listed PHP functions, with example
+    a. isset()
+    b. empty()
+    c. array_map()
+
+2. Create a function in PHP to floor decimal numbers with any provided precision.
+    Example: convert(2.99999,2), convert(199.99999,4)
+
+3. Write a code or function to convert the string and display date in the provided format?
+    a. ‘October 10 2021' to '10102021’ format
+    b. ‘1st November 2022’ to ‘01/11/2022’ format
+
+4. Write a code using Regex, to solve problem listed:
+    a. Provided String: “abc@grepsr.com”
+    b. Create an array with three values. Example: [‘abc’, ’grepsr’, ‘com’]
+    c. Ref: https://regex101.com/ (Try/Test)
+
+5. Write a recursive function to print title, price and category from the given php array.
+
+<?php
+$products = array(
+    'Home' => array(
+        'Electronics & Accessories' => array(
+            'items' => array(
+                array(
+                    'title' => 'SanDisk 256',
+                    'price' => '24.45'
+                ),
+                array(
+                    'title' => 'Jabra Wireless Headset',
+                    'price' => '55.12'
+                )
+            ),
+            'Accessories' => array(
+                'items' => array(
+                    array(
+                        'title' => 'DJI OM 5 Smartphone Gimbal Stabilizer',
+                        'price' => '129.99'
+                    ),
+                    array(
+                        'title' => 'SAMSUNG Galaxy SmartTag',
+                        'price' => '30.00'
+                    )
+                )
+            )
+        )
+    )
+);
+?>
+
+OUTPUT should look like below:
+
+Array
+(
+[title] => SanDisk 256
+[price] => 24.45
+[category] => Home > Electronics & Accessories
+)
+Array
+(
+[title] => Jabra Wireless Headset
+[price] => 55.12
+[category] => Home > Electronics & Accessories
+)
+Array
+(
+[title] => DJI OM 5 Smartphone Gimbal Stabilizer
+[price] => 129.99
+[category] => Home > Electronics & Accessories > Accessories
+)
+Array
+(
+[title] => SAMSUNG Galaxy SmartTag
+[price] => 30.00
+[category] => Home > Electronics & Accessories > Accessories
+) 
+
+6. Write a crawler in PHP to extract data from URL: https://github.com/search?q=php
+
+    a. Collect all the listings available from first 10 pages sorted by ‘Most stars’
+    b. Collect the following data from each listing (column names as listed in bold with
+    example):
+
+        i. repo: ‘ohmyzsh/ohmyzsh’
+
+        ii. description: ‘🙃 A delightful community-driven (with 2,100+ contributors)
+        framework for managing your zsh configuration. Includes 300+ optional
+        plugins (rails, git, macOS, hub, docker, homebrew, node, php, python,
+        etc), 140+ themes to spice up your morning, and an auto-update tool so
+        that makes it easy to keep up with the latest updates from the community.’
+
+        iii. is_sponsored : ‘yes’
+
+        iv. topics :
+        ‘zsh|terminal|shell|theme|cli|productivity|oh-my-zsh|plugins|themes|cli-app
+        |hacktoberfest|oh-my-zsh-theme|oh-my-zsh-plugin|zsh-configuration|ohm
+        yzsh|plugin-framework’
+
+        v. stargazers : ‘157k’
+
+        vi. language: ‘Shell’
+
+        vii. license: ‘MIT license’
+
+        viii. date: ‘05/04/2023’ (format should be d/m/Y)
+
+        ix. commits : 6862
+
+    c. Create a ‘CSV’ file named ‘repositories.csv’, with data collected.
+
+7. Write a code to create a ‘CSV’ file named ‘laptop.csv’ with column names as listed:
+    a. Title
+    b. Price
+    c. Brand
+    from JSON data. (available at https://dummyjson.com/products/search?q=Laptop)
