@@ -1,6 +1,6 @@
 <?php
 $url_base = 'https://github.com/search?o=desc&q=php&s=stars&type=Repositories&p=';
-$page_numbers = 2;
+$page_numbers = 10;
 // Here, the page_numbers should set to 10, but when I did that, HTTP/1.1 429 error shows: too many requests.
 // To solve that, I used sleep() function to delay each requet time. But still got the same error.
 $listings = array();
