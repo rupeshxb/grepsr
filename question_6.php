@@ -1,9 +1,11 @@
 <?php
 $url_base = 'https://github.com/search?o=desc&q=php&s=stars&type=Repositories&p=';
-$num_pages = 10;
+$page_numbers = 2;
+// Here, the page_numbers should set to 10, but when I did that, HTTP/1.1 429 error shows: too many requests.
+// To solve that, I used sleep() function to delay each requet time. But still got the same error.
 $listings = array();
 
-for ($page = 1; $page <= $num_pages; $page++) {
+for ($page = 1; $page <= $page_numbers; $page++) {
     $url = $url_base . $page;
     $html = file_get_contents($url);
 
@@ -28,7 +30,7 @@ for ($page = 1; $page <= $num_pages; $page++) {
             );
         }
     }
-
+    echo "\n";
     // too many requests hence sleep timer of 2 seconds is used after each request
     sleep(2);
 }
