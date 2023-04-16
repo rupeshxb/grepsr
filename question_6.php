@@ -1,6 +1,6 @@
 <?php
 $url_base = 'https://github.com/search?o=desc&q=php&s=stars&type=Repositories&p=';
-$num_pages = 1;
+$num_pages = 10;
 $listings = array();
 
 for ($page = 1; $page <= $num_pages; $page++) {
@@ -29,15 +29,12 @@ for ($page = 1; $page <= $num_pages; $page++) {
         }
     }
 
-    // sleep for 2 seconds before requesting the next page
-    // sleep(2);
+    // too many requests hence sleep timer of 2 seconds is used after each request
+    sleep(2);
 }
 
-// print all listings
-// foreach ($listings as $listing) {
-//     echo $listing['title'] . ' - ' . $listing['description'] . PHP_EOL;
-// }
-// write data to CSV file
+
+// to write data to CSV file
 $file = fopen('repositories.csv', 'w');
 fputcsv($file, array('Title', 'Description'));
 foreach ($listings as $listing) {
